@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mina länkar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h2 class="titel-namn">DAB's crib</h1>
+        <div class="actions">
+          <input id="searchInput" type="search" placeholder="Sök länkar..." autocomplete="off" />
+          <select id="categoryFilter" title="Filtrera kategori" aria-label="Filtrera kategori">
+            <option value="">Alla kategorier</option>
+          </select>
+          <button id="toggleFormBtn" aria-expanded="false" aria-controls="formSection">Ny länk</button>
+        </div>
+      </header>
+
+      <section id="formSection" class="hidden">
+        <form id="linkForm" novalidate>
+          <div class="field">
+            <label for="titleInput">Namn</label>
+            <input id="titleInput" name="title" type="text" required maxlength="80" placeholder="Ex. Bank, Jobbportal" />
+            <span class="error" id="titleError"></span>
+          </div>
+          <div class="field">
+            <label for="categoryInput">Kategori</label>
+            <input id="categoryInput" name="category" type="text" list="categoryOptions" maxlength="60" placeholder="Ex. Jobb, Privat, Verktyg" />
+            <datalist id="categoryOptions"></datalist>
+          </div>
+          <div class="field">
+            <label for="urlInput">URL</label>
+            <input id="urlInput" name="url" type="url" required placeholder="https://exempel.se" />
+            <span class="error" id="urlError"></span>
+          </div>
+          <div class="form-actions">
+            <button type="submit">Spara</button>
+            <button type="button" class="secondary" id="cancelBtn">Avbryt</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="list-header">
+        <div class="list-info"><strong id="count">0</strong> länkar</div>
+      </section>
+
+      <section id="linkList" class="links" aria-live="polite"></section>
+
+      <footer class="app-footer">
+        <small>Copyright approved by DAB</small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
