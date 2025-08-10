@@ -26,8 +26,13 @@ font-size: 50px;
 font-weight: bold;
 color: yellow;
 font-style: italic;
-
 }
+.kermit {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+}
+
 
 .app {
   max-width: 840px;
@@ -145,4 +150,5 @@ button.danger { border-color: rgba(255,107,107,0.4); color: #ffd6d6; }
   .actions input { flex: 1; }
   .list-header { font-size: 0.95rem; }
 }
+
 
