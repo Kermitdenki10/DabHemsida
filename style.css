@@ -133,8 +133,8 @@ button.danger { border-color: rgba(255,107,107,0.4); color: #ffd6d6; }
   border-radius: 50%;
 }
 .cowboy {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 
@@ -178,5 +178,6 @@ button.danger { border-color: rgba(255,107,107,0.4); color: #ffd6d6; }
   .actions input { flex: 1; }
   .list-header { font-size: 0.95rem; }
 }
+
 
 
