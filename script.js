@@ -24,6 +24,8 @@
     count: /** @type {HTMLElement} */ (document.getElementById("count")),
     cancelBtn: /** @type {HTMLButtonElement} */ (document.getElementById("cancelBtn")),
     categoryFilter: /** @type {HTMLSelectElement} */ (document.getElementById("categoryFilter")),
+    moodText: /** @type {HTMLElement} */ (document.getElementById("moodText")),
+    moodNextBtn: /** @type {HTMLButtonElement} */ (document.getElementById("moodNextBtn")),
   };
 
   /** @returns {LinkItem[]} */
@@ -127,6 +129,40 @@
   let links = loadLinks();
   render(links);
   syncCategoryControls(links);
+
+  // Humör: kattiga ord av visdom
+  const catWisdom = [
+    "Sov på problemet. Det löser sig. Zzz…",
+    "Om jag får plats, sitter jag. Om jag inte får plats… sitter jag ändå.",
+    "Work hard? Purr harder.",
+    "Tryck på alla knappar. Särskilt tangentbordet.",
+    "Man har aldrig bråttom när man har nio liv.",
+    "Fånga dagen? Nej. Fånga den röda pricken!",
+    "Kaffe för dig. Kartong för mig. Balans.",
+    "Plan för idag: 1) Stretch. 2) Stirra i fjärran. 3) Vara ikonisk.",
+    "Felsteg? Landar alltid på tassarna.",
+    "Kom ihåg: du är chef tills katten säger annat.",
+  ];
+
+  let moodIndex = Math.floor(Math.random() * catWisdom.length);
+  function setMood(i) {
+    if (!elements.moodText) return;
+    elements.moodText.textContent = catWisdom[i % catWisdom.length];
+  }
+  setMood(moodIndex);
+
+  if (elements.moodNextBtn) {
+    elements.moodNextBtn.addEventListener("click", () => {
+      moodIndex = (moodIndex + 1) % catWisdom.length;
+      setMood(moodIndex);
+    });
+  }
+
+  // Automatisk rotation var 10:e sekund
+  setInterval(() => {
+    moodIndex = (moodIndex + 1) % catWisdom.length;
+    setMood(moodIndex);
+  }, 10000);
 
   // Sök
   elements.searchInput.addEventListener("input", () => {
