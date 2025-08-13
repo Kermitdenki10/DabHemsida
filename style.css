@@ -17,7 +17,12 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: radial-gradient(80rem 50rem at 20% 0%, #0d1430 0%, #0b1020 60%, #0a0e1a 100%);
+  background-color: #0b1020;
+  background-image: url('s90.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.5;
 }
@@ -26,13 +31,8 @@ font-size: 50px;
 font-weight: bold;
 color: yellow;
 font-style: italic;
-}
-.kermit {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%; 
-}
 
+}
 
 .app {
   max-width: 840px;
@@ -46,6 +46,24 @@ font-style: italic;
   align-items: center;
   gap: 14px 16px;
   margin-bottom: 16px;
+}
+
+.mood {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  margin: 10px 0 18px;
+}
+
+#moodText {
+  flex: 1;
+  font-style: italic;
+  color: #ffd86b;
 }
 
 .app-header h1 {
@@ -109,6 +127,12 @@ button.danger { border-color: rgba(255,107,107,0.4); color: #ffd6d6; }
 .field .error { display: block; min-height: 1.1em; color: #ffb3b3; font-size: 0.87rem; margin-top: 4px; }
 
 .form-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+.kermit {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  
+}
 
 .list-header {
   display: flex;
@@ -150,5 +174,4 @@ button.danger { border-color: rgba(255,107,107,0.4); color: #ffd6d6; }
   .actions input { flex: 1; }
   .list-header { font-size: 0.95rem; }
 }
-
 
